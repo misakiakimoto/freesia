@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="simple" />
+	<!-- 国際化 -->
+	<constant name="struts.custom.i18n.resources"
+		value="	com.internousdev.sundia.property.myPageTest,
+				com.internousdev.sundia.property.adminTop,
+				com.internousdev.sundia.property.cart,
+				com.internousdev.sundia.property.contact,
+				com.internousdev.sundia.property.header,
+				com.internousdev.sundia.property.sidebar,
+				com.internousdev.sundia.property.history,
+				com.internousdev.sundia.property.inquiryEnd,
+				com.internousdev.sundia.property.inquiry,
+				com.internousdev.sundia.property.itemAdd,
+				com.internousdev.sundia.property.itemList,
+				com.internousdev.sundia.property.itemUpdated,
+				com.internousdev.sundia.property.item,
+				com.internousdev.sundia.property.login,
+				com.internousdev.sundia.property.main_top,
+				com.internousdev.sundia.property.manage,
+				com.internousdev.sundia.property.moreDetail,
+				com.internousdev.sundia.property.picture,
+				com.internousdev.sundia.property.settleComplete,
+				com.internousdev.sundia.property.mypage,
+				com.internousdev.sundia.property.account,
+				com.internousdev.sundia.property.history,
+				com.internousdev.sundia.property.toError,
+				com.internousdev.sundia.property.payment,
+				com.internousdev.sundia.property.paymentConfirm,
+				com.internousdev.sundia.property.paymentComplete,
+				com.internousdev.sundia.property.creditError,
+				com.internousdev.sundia.property.sessionError,
+				com.internousdev.sundia.property.admin_item,
+				com.internousdev.sundia.property.admin_delete,
+				com.internousdev.sundia.property.topPage,
+				com.internousdev.sundia.property.inquiry" />
+
+<package name="com.internousdev.sundia.action" extends="struts-default">
+
+	<!-- 正常リンク時の初期読み込みアクション(TOP商品＋Cookie) -->
+    <action name="IndexAction" class="com.internousdev.sundia.action.IndexAction"
+			method="execute">
+	<result name="success">System_reloadTop.jsp</result>
+	<result name="error">toppage_error.jsp</result>
+    </action>
+
+	<!-- Cookie取得アクション -->
+    <action name="GetCookieAction" class="com.internousdev.sundia.action.GetCookieAction"
+			method="execute">
+	<result name="success">System_reloadPrevpage.jsp</result>
+	<result name="error">toppage_error.jsp</result>
+    </action>
+
+    <!-- ログインアクション -->
+    <action name="LoginAction" class="com.internousdev.sundia.action.LoginAction"
+			method="execute">
+	<result name="success">System_reloadTop.jsp</result>
+	<result name="error">login.jsp</result>
+	<result name="login">MyPageTest.jsp</result> <!--管理者のログイン成功時のページ  -->
+   </action>
+
+
+    <!-- ログアウトアクション -->
+   <action name="logoutAction" class="com.internousdev.sundia.action.LogoutAction"
+			method="execute">
+	<result name="success">System_reloadTop.jsp</result>
+	<result name="error">logOut.jsp</result>
+   </action>
+
+
+<!-- 購入履歴 -->
+		<action name="PurchaseDetailAction" class="com.internousdev.sundia.action.PurchaseDetailAction"
+			method="execute">
+			<result name="success">MyPageTest.jsp</result>
+			<result name="error">MyPageTest.jsp</result>
+			</action>
+
+<!-- 購入履歴 -->
+		<action name="ConAdminUpdatetAction" class="com.internousdev.sundia.action.ConAdminUpdatetAction"
+			method="execute">
+			<result name="success">admin_list.jsp</result>
+			<result name="error">admin_list.jsp</result>
+			</action>
+
+
+ <!-- Twitter認証を行うアクション-->
+<action name="GoTwitterAction" class="com.internousdev.sundia.action.GoTwitterAction" method="execute">
+<result name="success">System_index.jsp</result>
+<result name="error">login.jsp</result>
+</action>
+
+<!-- Twitter認証のコールバックアクション-->
+<action name="LoginTwitterAction" class="com.internousdev.sundia.action.LoginTwitterAction" method="execute">
+<result name="success" type="redirectAction">IndexAction</result>
+<result name="error">login.jsp</result>
+</action>
+
+<!-- Facebook認証を行うアクション -->
+<action name="GoFacebookAction" class="com.internousdev.sundia.action.GoFacebookAction" method="execute">
+<result name="success">System_index.jsp</result>
+<result name="error">login.jsp</result>
+</action>
+
+
+<!-- Facebook認証のコールバックアクション -->
+		<action name="LoginFacebookAction"
+			class="com.internousdev.sundia.action.LoginFacebookAction" method="execute">
+			<result name="success" type="redirectAction">IndexAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+    <!-- Mypageの情報を表示させるアクション
+	<action name="MyPageAction" class="com.internousdev.sundia.action.MyPageAction"
+			method="execute">
+			<result name="success">mypage.jsp</result>
+		</action>-->
+
+<!-- Accountの情報を表示させるアクション-->
+	<action name="AccountAction" class="com.internousdev.sundia.action.AccountAction" method="execute">
+		<result name="success">Account.jsp</result>
+		<result name="error">Account.jsp</result>
+	</action>
+
+<!-- Historyの情報を表示させるアクション-->
+	<action name="HistoryAction" class="com.internousdev.sundia.action.HistoryAction" method="execute">
+		<result name="success">history.jsp</result>
+		<result name="error">history.jsp</result>
+	</action>
+
+<!-- トップの商品一覧表示アクション-->
+<action name="ItemDisplayAction" class="com.internousdev.sundia.action.ItemDisplayAction"
+			method="execute">
+	<result name="success">System_reloadTop.jsp</result>
+	<result name="error">toppage_error.jsp</result>
+</action>
+
+<!-- カートに商品を追加する -->
+		<action name="AddToCartAction" class="com.internousdev.sundia.action.AddToCartAction"
+			method="execute">
+			<result name="success">Cart1.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+
+<!-- カートテーブルに値を挿入
+<action name="CartInsertAction" class="com.internousdev.sundia.action.CartInsertAction" method="execute">
+<result name="success" type="chain">GoCartAction</result>
+<result name="error" type="chain">GoCartAction</result>
+<result name="input" type="chain">GoItemDetailAction</result>
+<result name="login">login.jsp</result>
+</action>-->
+
+<!-- 商品詳細画面からカート画面に遷移-->
+<action name="GoCartAction" class="com.internousdev.sundia.action.GoCartAction" method="execute">
+<result name="success">Cart1.jsp</result>
+<result name="error" type="chain">System_reloadTop.jsp</result>
+</action>
+
+<!-- カートの情報を取得する
+	<action name="CartSelectAction" class="com.internousdev.sundia.action.CartSelectAction"
+		method="execute">
+		<result name="success">cart.jsp</result>
+		<result name="error" type="chain">CartSelectAction</result>
+		<result name="input">reload.jsp</result>
+		<result name="login">login.jsp</result>
+	</action> -->
+<!-- カートに商品を入れるアクション
+	<action name="CartInsertAction" class="com.internousdev.sundia.action.CartInsertAction"
+		method="execute">
+		<result name="success" type="chain">CartSelectAction</result>
+		<result name="error" type="chain">CartSelectAction</result>
+		<result name="input">reload.jsp</result>
+	</action>-->
+<!-- カートの商品を削除するアクション -->
+	<action name="CartDeleteAction" class="com.internousdev.sundia.action.CartDeleteAction"
+		method="execute">
+		<result name="success" type="chain">Cart1.jsp</result>
+		<result name="error" type="chain">Cart1.jsp</result>
+		<result name="input">reload.jsp</result>
+	</action>
+<!-- カートの商品を更新するアクション -->
+	<action name="CartUpdateAction" class="com.internousdev.sundia.action.CartUpdateAction"
+		method="execute">
+		<result name="success" type="chain">CartSelectAction</result>
+		<result name="error" type="chain">CartSelectAction</result>
+		<result name="input">reload.jsp</result>
+	</action>
+<!-- カート画面への遷移
+        <action name="GoCartAction" class="com.internousdev.sundia.action.GoCartAction" method="execute">
+            <result name="success">cart.jsp</result>
+            <result name="error">cart.jsp</result>
+        </action> -->
+<!-- 支払い画面への遷移 -->
+		<action name="GoSettlementAction"
+			class="com.internousdev.sundia.action.GoSettlementAction" method="execute">
+			<result name="success">payment.jsp</result>
+			<result name="error">cart.jsp</result>
+			<result name="login">sessionError.jsp</result>
+		</action>
+
+    <!-- 管理者画面ログインアクション
+    <action name="ConloginAction" class="com.internousdev.sundia.action.ConloginAction"
+			method="execute">
+	<result name="success">Contop.jsp</result>
+	<result name="error">Conloginfail.jsp</result>
+	<result name="login">Contop.jsp</result>
+   </action>
+   -->
+   <!-- 支払い画面。成功なら購入確認、エラーならクレジット情報の間違い、ログインならセッションエラーのページに飛ぶ-->
+		<action name="PaymentAction" class="com.internousdev.sundia.action.PaymentAction"
+		 method="execute">
+			<result name="success">paymentConfirm.jsp</result>
+			<result name="error">creditError.jsp</result>
+			<result name="login">sessionError.jsp</result>
+		</action>
+<!-- 購入確認画面。成功なら完了画面、在庫切れだったら在庫切れ画面、それ以外はセッションエラーに飛ぶ
+ <action name="PurchaseCompleteAction"
+   class="com.internousdev.sundia.action.PurchaseCompleteAction"
+   method="execute">
+   <result name="success">paymentComplete.jsp</result>
+   <result name="error">paymentConfirm.jsp</result>
+   <result name="login">sessionError.jsp</result>
+</action> -->
+		<!-- 管理者商品管理画面 -->
+		<action name="AdminItemAction" class="com.internousdev.sundia.action.AdminItemAction"
+			method="execute">
+			<result name="success">admin_item.jsp</result>
+			<result name="error">admin_item.jsp</result>
+		</action>
+
+	<!-- 商品情報一覧取得(管理者) -->
+	<action name="AdminItemDisplayAction"
+	class="com.internousdev.sundia.action.AdminItemDisplayAction"
+	method="execute">
+	<result name="success">Admin_goItemList.jsp</result>
+	<result name="error">Admin_errorBasic.jsp</result>
+	</action>
+
+	<!-- 商品情報の検索(管理者) -->
+	<action name="AdminItemSearchAction"
+	class="com.internousdev.sundia.action.AdminItemSearchAction"
+	method="execute">
+	<result name="success">Admin_goItemList.jsp</result>
+	<result name="error">Admin_errorBasic.jsp</result>
+	</action>
+
+	<!-- 商品の削除/非削除切り替え(管理者) -->
+	<action name="AdminItemSwitchAction"
+	class="com.internousdev.sundia.action.AdminItemSwitchAction"
+	method="execute">
+	<result name="success">Admin_goItemList.jsp</result>
+	<result name="error">Admin_errorBasic.jsp</result>
+	</action>
+
+	<!-- 商品編集用の詳細情報取得(管理者) -->
+	<action name="AdminItemEditAction"
+	class="com.internousdev.sundia.action.AdminItemEditAction"
+	method="execute">
+	<result name="success">Admin_goItemEdit.jsp</result>
+	<result name="error">Admin_errorBasic.jsp</result>
+	</action>
+
+	<!-- 商品の編集実行(管理者) -->
+	<action name="AdminItemUpdateAction"
+	class="com.internousdev.sundia.action.AdminItemUpdateAction"
+	method="execute">
+	<result name="success">Admin_goItemList.jsp</result>
+	<result name="error">Admin_errorBasic.jsp</result>
+	</action>
+
+<!-- トップから商品詳細アクション-->
+<action name="GoItemDetailAction" class="com.internousdev.sundia.action.GoItemDetailAction"
+			method="execute">
+	<result name="success">UserItemDeta.jsp</result>
+	<result name="error">toppage_error.jsp</result>
+</action>
+
+         <!-- 顧客情報一覧取得(管理者) -->
+    <action name="ConCustomerAction" class="com.internousdev.sundia.action.ConCustomerAction"
+      method="execute">
+      <result name="success">ConCustomer.jsp</result>
+      <result name="error">ConCustomer.jsp</result>
+      </action>
+
+<!-- 販売履歴画面 -->
+		<action name="ConhannbairirekiAction" class="com.internousdev.sundia.action.ConhannbairirekiAction"
+			method="execute">
+			<result name="success">Conhannbairireki.jsp</result>
+			<result name="error">Conhannbairireki.jsp</result>
+		</action>
+
+		<!-- 問い合わせ(ユーザー) -->
+	<action name="InquiryAction"
+	class="com.internousdev.sundia.action.InquiryAction"
+	method="execute">
+	<result name ="success">inquiry_com.jsp</result>
+	<result name ="error">inquiry.jsp</result>
+	</action>
+
+</package>
+</struts>
