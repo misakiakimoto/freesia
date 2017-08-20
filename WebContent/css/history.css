@@ -1,0 +1,64 @@
+/* ================================================ */
+/* === Header ===================================== */
+
+/* ================================================ */
+/* === Body ======================================= */
+
+div#body{
+  margin-left: auto;
+  margin-right: auto;
+  width:auto;
+  max-width: 1200px;
+  padding-top: 20px;
+}
+
+h1{
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  font-weight: lighter;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+  empty-cells: hide;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.account{
+  width: 60%;
+  margin-top: 40px;
+}
+
+.tr1{
+  text-align: left;
+}
+
+.tr2{
+  background-color:#f7f7f7;
+  text-align: left;
+  border-top: solid #cfcfcf 2px;
+}
+
+td.item{
+  padding: 10px 0px 0px 3px;
+}
+
+td.data{
+  padding: 3px 5px;
+  padding-left: 2em;
+}
+
+.mplink{
+  margin: 20px 0px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* ================================================ */
+/* === Footer ===================================== */
+
