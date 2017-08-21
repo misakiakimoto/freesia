@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.ConInquiryDTO;
+import com.internousdev.freesia.dto.ConInquiryDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /*
@@ -28,7 +28,7 @@ public class ConInquiryDAO {
      * @return SearchList 問い合わせ情報のリスト
      */
     public ArrayList<ConInquiryDTO> display(String userName) {
-        Connection con = new MySqlConnector("sundia").getConnection();
+        Connection con = new MySqlConnector("freesia").getConnection();
         String sql = "select * from inquiry_histories";
         if (!userName.equals("")) {
             sql = sql + " where user_name like \'%" + userName + "%\'";

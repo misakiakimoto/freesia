@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,9 +9,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sundia.dao.GoCartDAO;
-import com.internousdev.sundia.dto.CartDTO;
-import com.internousdev.sundia.util.CartAssist;
+import com.internousdev.freesia.dao.GoCartDAO;
+import com.internousdev.freesia.dto.CartDTO;
+import com.internousdev.freesia.util.CartAssist;
 
 /**決済入力画面に遷移するためのクラス
  * @author  MISAKI AKIMOTO

@@ -10,7 +10,7 @@
 <head>
 <!-- 国際化 -->
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.sundia.property.log"
+<fmt:setBundle basename="com.internousdev.freesia.property.log"
   var="lang" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

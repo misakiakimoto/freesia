@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -14,11 +14,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sundia.dao.AdminItemUpdateDAO;
+import com.internousdev.freesia.dao.AdminItemUpdateDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 @MultipartConfig(location="/tmp/")
-@WebServlet("/src/com.internousdev.sundia.action/")
+@WebServlet("/src/com.internousdev.freesia.action/")
 
 public class AdminItemUpdateAction extends ActionSupport
 

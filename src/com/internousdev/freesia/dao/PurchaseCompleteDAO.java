@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.CartDTO;
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dto.CartDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -30,7 +30,7 @@ public class PurchaseCompleteDAO {
      * @return check 在庫があればOK、なければNGを返す
      */
     public String stockCheck(ArrayList<CartDTO> cartList) {
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
         String sql = "select * from items where item_id=?";
@@ -80,7 +80,7 @@ public class PurchaseCompleteDAO {
      */
     public int purchase1(int userId) {
         int ret = 0;
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = null;
         con = db.getConnection();
         CartDTO dto = new CartDTO();
@@ -125,7 +125,7 @@ public class PurchaseCompleteDAO {
      */
     public int purchase(int userId, float totalPrice, ArrayList<CartDTO> cartList) {
         int ret = 0;
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = null;
         con = db.getConnection();
         String sql1 = "insert into purchases_outlines(user_id, total_price) values(?, ?)";
@@ -178,7 +178,7 @@ public class PurchaseCompleteDAO {
      */
     public int clean(int userId) {
         int ret = 0;
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         String cleanCart = "delete from carts where user_id = ?";
         try {
@@ -206,7 +206,7 @@ public class PurchaseCompleteDAO {
      */
     public int stockUpdate(int userId) {
         int ret = 0;
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         String stockUpdate = "UPDATE items SET stocks = ? WHERE item_id = ?";
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
@@ -283,7 +283,7 @@ public class PurchaseCompleteDAO {
      */
     public int salesUpdate(int userId) {
         int ret = 0;
-        MySqlConnector db = new MySqlConnector( "sundia");
+        MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = db.getConnection();
         String stockUpdate = "UPDATE items SET sales = ? WHERE item_id = ?";
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();

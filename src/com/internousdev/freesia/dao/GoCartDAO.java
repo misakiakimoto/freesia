@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.CartDTO;
+import com.internousdev.freesia.dto.CartDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -26,7 +26,7 @@ public class GoCartDAO {
      */
     public ArrayList<CartDTO> selectedItem(int userId) {
 
-        MySqlConnector db = new MySqlConnector( "sundia");
+        MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = db.getConnection();
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 

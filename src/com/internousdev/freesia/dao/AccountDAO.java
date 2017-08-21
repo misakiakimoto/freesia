@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 /**
  * アカウント詳細ページ(ユーザー)で使うユーザー情報を取得するためのDAO
  * @author  Ryota Shishikura
@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.UsersDTO;
+import com.internousdev.freesia.dto.UsersDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 public class AccountDAO {

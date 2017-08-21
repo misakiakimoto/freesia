@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,13 +7,13 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sundia.dao.CartDeleteDAO;
-import com.internousdev.sundia.dao.GoCartDAO;
-import com.internousdev.sundia.dao.MyPageTestDAO;
-import com.internousdev.sundia.dto.CartDTO;
-import com.internousdev.sundia.dto.CreditDTO;
-import com.internousdev.sundia.dto.UsersDTO;
-import com.internousdev.sundia.util.CartAssist;
+import com.internousdev.freesia.dao.CartDeleteDAO;
+import com.internousdev.freesia.dao.GoCartDAO;
+import com.internousdev.freesia.dao.MyPageTestDAO;
+import com.internousdev.freesia.dto.CartDTO;
+import com.internousdev.freesia.dto.CreditDTO;
+import com.internousdev.freesia.dto.UsersDTO;
+import com.internousdev.freesia.util.CartAssist;
 
 /**
  *  カートの中身を削除するクラス

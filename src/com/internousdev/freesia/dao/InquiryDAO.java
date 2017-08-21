@@ -1,11 +1,11 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.internousdev.sundia.dto.UsersDTO;
+import com.internousdev.freesia.dto.UsersDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -30,7 +30,7 @@ public class InquiryDAO {
             boolean login) {
         int count = 0;
 
-        Connection con = new MySqlConnector("sundia").getConnection();
+        Connection con = new MySqlConnector("freesia").getConnection();
         String sql = "INSERT INTO inquiry_histories(user_name,user_address,user_tellnumber,title,comment,login)VALUES(?,?,?,?,?,?)";
 
         try {
@@ -70,7 +70,7 @@ public class InquiryDAO {
             int usersId) {
         int count = 0;
 
-        Connection con = new MySqlConnector("sundia").getConnection();
+        Connection con = new MySqlConnector("freesia").getConnection();
         String sql = "INSERT INTO inquiry_histories(user_name,user_address,user_tellnumber,title,comment,login)VALUES(?,?,?,?,?,?)";
         Connection con2 = new MySqlConnector("openconnect").getConnection();
         String sql2 = "SELECT phone_email FROM users where user_id=?";

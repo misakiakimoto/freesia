@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.internousdev.sundia.util;
+package com.internousdev.freesia.util;
 
 import java.io.IOException;
 

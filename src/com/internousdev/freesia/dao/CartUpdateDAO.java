@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,7 +28,7 @@ public class CartUpdateDAO {
     public int updateCart(int cartId, int userId, int quantities) {
         int updateCount = 0;
 
-        MySqlConnector db = new MySqlConnector( "sundia");
+        MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = (Connection) db.getConnection();
         String sql = "update carts set quantities=? where user_id=? and cart_id=?";
 

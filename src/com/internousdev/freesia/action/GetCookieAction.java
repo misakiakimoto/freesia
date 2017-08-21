@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.util.Map;
 
@@ -10,7 +10,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sundia.dao.UserLevelDAO;
+import com.internousdev.freesia.dao.UserLevelDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

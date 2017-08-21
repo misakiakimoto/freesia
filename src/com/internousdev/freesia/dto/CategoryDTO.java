@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dto;
+package com.internousdev.freesia.dto;
 
 /**
  * 商品情報を格納するためのDTOクラス

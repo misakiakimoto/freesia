@@ -1,12 +1,12 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sundia.dao.AccountDAO;
-import com.internousdev.sundia.dto.UsersDTO;
+import com.internousdev.freesia.dao.AccountDAO;
+import com.internousdev.freesia.dto.UsersDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

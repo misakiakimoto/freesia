@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +26,7 @@ public class CartDeleteDAO {
 
     public int delete(int userId, int cartId) {
         int delCount = 0;
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         String sql = "delete from carts where user_id=? and cart_id=?";
         try {

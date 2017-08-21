@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.PurchaseDetailDTO;
+import com.internousdev.freesia.dto.PurchaseDetailDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -43,7 +43,7 @@ public class PurchaseDetailDAO {
      */
     public ArrayList<PurchaseDetailDTO> UserPurchaseHistoryList(int userId, String itemsName) {
 
-        MySqlConnector db = new MySqlConnector( "sundia");
+        MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = db.getConnection();
         ArrayList<PurchaseDetailDTO> UserPurchaseHistoryList = new ArrayList<PurchaseDetailDTO>();
         int k = 1;

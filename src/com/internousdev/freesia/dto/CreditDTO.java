@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dto;
+package com.internousdev.freesia.dto;
 
 /**
  * CreditDTO クレジット情報を格納する為のクラス

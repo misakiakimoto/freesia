@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.CartDTO;
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dto.CartDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -30,7 +30,7 @@ public class AddToCartDAO {
 
     public ArrayList<ItemDTO> itemStatus(int itemId) {
 
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         ArrayList<ItemDTO> itemStatus = new ArrayList<ItemDTO>();
 
@@ -74,7 +74,7 @@ public class AddToCartDAO {
     public int addToCart(int userId, int itemId) {
         int addCount = 0;
 
-        Connection con = new MySqlConnector("sundia").getConnection();
+        Connection con = new MySqlConnector("freesia").getConnection();
         System.out.println(userId + "," + itemId);
         String sql = "insert into carts (user_id,item_id) values(?,?)";
 
@@ -108,7 +108,7 @@ public class AddToCartDAO {
     public ArrayList<CartDTO> selected(int userId) {
 
 
-        MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "sundia", "root",
+        MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "freesia", "root",
                 "mysql");
         Connection con = db.getConnection();
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();

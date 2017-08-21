@@ -6,7 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.sundia.property.payment" var="lang" />
+<fmt:setBundle basename="com.internousdev.freesia.property.payment" var="lang" />
 <!-- ここまで -->
 
 <!DOCTYPE html>

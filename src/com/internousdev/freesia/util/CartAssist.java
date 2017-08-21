@@ -1,15 +1,15 @@
 /**
  *
  */
-package com.internousdev.sundia.util;
+package com.internousdev.freesia.util;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.internousdev.sundia.dao.GoItemDetailDAO;
-import com.internousdev.sundia.dto.CartDTO;
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dao.GoItemDetailDAO;
+import com.internousdev.freesia.dto.CartDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

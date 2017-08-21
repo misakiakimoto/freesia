@@ -1,10 +1,10 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -37,7 +37,7 @@ public class AdminItemSwitchDAO {
     public String switchDeleted(int id, boolean flg) throws Exception {
         result = "error";
         try {
-            final Connection con = new MySqlConnector("sundia").getConnection();
+            final Connection con = new MySqlConnector("freesia").getConnection();
 
             sql = "UPDATE items SET is_deleted=? WHERE item_id=?";
 

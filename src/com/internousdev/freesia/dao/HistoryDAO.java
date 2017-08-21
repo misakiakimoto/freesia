@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.PurchaseDetailDTO;
+import com.internousdev.freesia.dto.PurchaseDetailDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -32,7 +32,7 @@ public class HistoryDAO {
 
     public ArrayList<PurchaseDetailDTO> select(int userId) {
 
-        MySqlConnector db = new MySqlConnector( "sundia");
+        MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = db.getConnection();
 
         String sql = "SELECT * FROM purchases_details WHERE user_id = ?";

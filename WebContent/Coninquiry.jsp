@@ -12,7 +12,7 @@
   <head>
   <!-- ここから国際化 -->
   <fmt:setLocale value="${pageContext.request.locale.language}" />
-  <fmt:setBundle basename="com.internousdev.sundia.property.ConInquiry" var="lang" />
+  <fmt:setBundle basename="com.internousdev.freesia.property.ConInquiry" var="lang" />
   <!-- ここまで国際化 -->
 
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
   <title><s:text name="lang.admin_item.title"/></title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Sundia - 問い合わせフォーム</title>
+  <title>freesia - 問い合わせフォーム</title>
   <link href="css/Contop-gamen.style.css" rel="stylesheet" type="text/css" >
   <link href="css/Coninquiry.css" rel="stylesheet" type="text/css" >
 

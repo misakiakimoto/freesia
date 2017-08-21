@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.PurchaseDetailDTO;
-import com.internousdev.sundia.dto.PurchaseOutlineDTO;
+import com.internousdev.freesia.dto.PurchaseDetailDTO;
+import com.internousdev.freesia.dto.PurchaseOutlineDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -30,7 +30,7 @@ public class AdminPurchaseDetailDAO {
 
     public PurchaseOutlineDTO getOutline(int purchaseId) {
         PurchaseOutlineDTO dto = new PurchaseOutlineDTO();
-        Connection con = new MySqlConnector("sundia").getConnection();
+        Connection con = new MySqlConnector("freesia").getConnection();
         String table1 = "purchases_outlines";
         String table2 = "openconnect.users";
         String sql = "SELECT * FROM " + table1 + " INNER JOIN " + table2 + " ON " + table1 + ".user_id=" + table2
@@ -74,7 +74,7 @@ public class AdminPurchaseDetailDAO {
 
     public ArrayList<PurchaseDetailDTO> display(int purchaseId) {
         ArrayList<PurchaseDetailDTO> SearchList = new ArrayList<PurchaseDetailDTO>();
-        Connection con = new MySqlConnector("sundia").getConnection();
+        Connection con = new MySqlConnector("freesia").getConnection();
 
         String table1 = "purchases_details";
         String table2 = "items";

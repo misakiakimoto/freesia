@@ -10,7 +10,7 @@
 
 <!-- ここから国際化 -->
 <fmt:setBundle
-  basename="com.internousdev.sundia.property.payment_confirm" var="lang" />
+  basename="com.internousdev.freesia.property.payment_confirm" var="lang" />
 <!-- ここまで国際化 -->
 
 <title><s:text name="lang.payment_confirm.title" /></title>

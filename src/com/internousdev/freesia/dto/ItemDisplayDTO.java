@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dto;
+package com.internousdev.freesia.dto;
 
 /**
  * アイテム表示に関するDTOクラス

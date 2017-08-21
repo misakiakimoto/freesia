@@ -1,11 +1,11 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.ConCustomerDTO;
+import com.internousdev.freesia.dto.ConCustomerDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 import com.mysql.jdbc.PreparedStatement;
 

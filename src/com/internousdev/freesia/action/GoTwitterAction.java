@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.util.Map;
 

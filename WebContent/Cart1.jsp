@@ -9,7 +9,7 @@
 <!-- 国際化 ※ここでは国を判別しています。
 言語コード( ja,en など)を示すロケールID を取得します。-->
 <fmt:setLocale value="${pageContext.request.locale.language}"/>
-<fmt:setBundle basename="com.internousdev.sundia.property.cart" var="lang" />
+<fmt:setBundle basename="com.internousdev.freesia.property.cart" var="lang" />
 
 
 <!DOCTYPE html>

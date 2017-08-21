@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

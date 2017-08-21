@@ -5,7 +5,7 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <fmt:setLocale value="${pageContext.request.locale.language}" />
- <fmt:setBundle basename="com.internousdev.sundia.property.paymentComplete" var="lang" />
+ <fmt:setBundle basename="com.internousdev.freesia.property.paymentComplete" var="lang" />
     <!-- ここまで国際化 -->
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
 <head>
 <!-- ここから国際化 -->
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.sundia.property.paymentComplete" var="lang" />
+<fmt:setBundle basename="com.internousdev.freesia.property.paymentComplete" var="lang" />
 <!-- ここまで国際化 -->
 <meta charset="utf-8">
 

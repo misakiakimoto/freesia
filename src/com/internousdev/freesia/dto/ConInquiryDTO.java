@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dto;
+package com.internousdev.freesia.dto;
 
 /**
  * 管理者ページでのお問合わせに関するDTOクラス

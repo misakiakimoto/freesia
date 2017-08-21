@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 /**
  * 商品詳細表示に関するDAOクラス
@@ -31,7 +31,7 @@ public class GoItemDetailDAO {
      * @return itemList 商品情報を返す
      */
     public ArrayList<ItemDTO> selectbyItem(int itemId)throws SQLException {
-        MySqlConnector db = new MySqlConnector("sundia");
+        MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         PreparedStatement ps = null;
         ItemDTO dto = new ItemDTO();

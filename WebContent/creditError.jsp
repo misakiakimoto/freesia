@@ -14,7 +14,7 @@
 
 <!-- ここから国際化 -->
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.sundia.property.creditError" var="lang" />
+<fmt:setBundle basename="com.internousdev.freesia.property.creditError" var="lang" />
 <!-- ここまで国際化 -->
 
     <meta charset="utf-8">

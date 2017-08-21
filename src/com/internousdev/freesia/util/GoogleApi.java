@@ -1,4 +1,4 @@
-package com.internousdev.sundia.util;
+package com.internousdev.freesia.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

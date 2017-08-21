@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -6,13 +6,13 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sundia.dao.CartDeleteDAO;
-import com.internousdev.sundia.dao.CartUpdateDAO;
-import com.internousdev.sundia.dao.GoCartDAO;
-import com.internousdev.sundia.dao.GoItemDetailDAO;
-import com.internousdev.sundia.dao.PurchaseCompleteDAO;
-import com.internousdev.sundia.dto.CartDTO;
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dao.CartDeleteDAO;
+import com.internousdev.freesia.dao.CartUpdateDAO;
+import com.internousdev.freesia.dao.GoCartDAO;
+import com.internousdev.freesia.dao.GoItemDetailDAO;
+import com.internousdev.freesia.dao.PurchaseCompleteDAO;
+import com.internousdev.freesia.dto.CartDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

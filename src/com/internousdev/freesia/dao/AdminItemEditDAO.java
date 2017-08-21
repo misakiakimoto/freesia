@@ -1,10 +1,10 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -24,7 +24,7 @@ public class AdminItemEditDAO {
      * @return dto DTOをactionに返す
      */
 
-    private Connection con = new MySqlConnector("sundia").getConnection();
+    private Connection con = new MySqlConnector("freesia").getConnection();
     private ItemDTO dto = new ItemDTO();
 
     public ItemDTO getItemData(int id) throws Exception {

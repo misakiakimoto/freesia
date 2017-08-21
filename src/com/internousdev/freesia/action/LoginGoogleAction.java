@@ -1,4 +1,4 @@
-package com.internousdev.sundia.action;
+package com.internousdev.freesia.action;
 
 import java.util.Map;
 
@@ -34,7 +34,7 @@ public class LoginGoogleAction extends ActionSupport implements
     /**
      * コールバックURL
      */
-    private static final String CALLBACK_URL = "http://test.internousdev.com/sundia/LoginGoogleAction";
+    private static final String CALLBACK_URL = "http://test.internousdev.com/freesia/LoginGoogleAction";
 
     /**
      * ネットワークネーム

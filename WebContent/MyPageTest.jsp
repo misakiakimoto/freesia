@@ -12,7 +12,7 @@
 <head>
 <!-- 国際化 -->
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.sundia.property.myPageTest"
+<fmt:setBundle basename="com.internousdev.freesia.property.myPageTest"
   var="lang" />
 
 <meta charset="UTF-8">

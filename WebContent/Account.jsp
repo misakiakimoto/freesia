@@ -8,9 +8,9 @@
 <!DOCTYPE html>
 <%-- 国際化 --%>
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.sundia.property.account" var="lang" />
+<fmt:setBundle basename="com.internousdev.freesia.property.account" var="lang" />
 
-<title>Sundia-アカウント</title>
+<title>freesia-アカウント</title>
 <meta charset="utf-8">
 
 <%-- たぶんBootstrap --%>

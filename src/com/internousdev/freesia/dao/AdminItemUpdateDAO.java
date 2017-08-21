@@ -1,4 +1,4 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +27,7 @@ public class AdminItemUpdateDAO {
      * @param itemId 商品ID
      */
 
-    private Connection con = new MySqlConnector("sundia").getConnection();
+    private Connection con = new MySqlConnector("freesia").getConnection();
 
     public String update(int itemId, int categoryId, String itemName, float price, int stocks, String itemDetail,
             String[] imagePath) throws Exception {

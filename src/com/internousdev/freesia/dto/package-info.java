@@ -4,4 +4,4 @@
  * @since 2017/08/14
  * @version 1.0
  */
-package com.internousdev.sundia.dto;
+package com.internousdev.freesia.dto;

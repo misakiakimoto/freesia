@@ -1,11 +1,11 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.ItemDTO;
+import com.internousdev.freesia.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -44,7 +44,7 @@ public class AdminItemSearchDAO {
 
     public ArrayList<ItemDTO> generateItemList(String chkisDeleted,int chkCategoryId,String chkItemName) throws Exception{
         try{
-            final Connection con=new MySqlConnector("sundia").getConnection();
+            final Connection con=new MySqlConnector("freesia").getConnection();
 
             sql1 ="SELECT * FROM items";
             sql2 ="SELECT * FROM items_images WHERE item_id=?";

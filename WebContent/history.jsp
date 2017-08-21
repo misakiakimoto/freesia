@@ -11,7 +11,7 @@
 <head>
   <%-- 国際化 --%>
     <fmt:setLocale value="${pageContext.request.locale.language}" />
-    <fmt:setBundle basename="com.internousdev.sundia.property.history" var="lang" />
+    <fmt:setBundle basename="com.internousdev.freesia.property.history" var="lang" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

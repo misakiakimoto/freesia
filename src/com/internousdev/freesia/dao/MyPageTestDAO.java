@@ -1,11 +1,11 @@
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.UsersDTO;
+import com.internousdev.freesia.dto.UsersDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -28,7 +28,7 @@ public class MyPageTestDAO {
      */
     public ArrayList<UsersDTO> select(int userId){
 
-       MySqlConnector db = new MySqlConnector("sundia");
+       MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
 
         UsersDTO dto = new UsersDTO();

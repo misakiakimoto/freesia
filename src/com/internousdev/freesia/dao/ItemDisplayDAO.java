@@ -1,5 +1,5 @@
 
-package com.internousdev.sundia.dao;
+package com.internousdev.freesia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.sundia.dto.ItemDisplayDTO;
+import com.internousdev.freesia.dto.ItemDisplayDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -31,7 +31,7 @@ public class ItemDisplayDAO {
      */
 
     private ArrayList<ItemDisplayDTO> itemList = new ArrayList<ItemDisplayDTO>();
-    private Connection con = new MySqlConnector("sundia").getConnection();
+    private Connection con = new MySqlConnector("freesia").getConnection();
     private ItemDisplayDTO dto = new ItemDisplayDTO();
     private PreparedStatement ps;
     private ResultSet rs1, rs2, rs3;
