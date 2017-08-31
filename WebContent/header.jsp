@@ -24,7 +24,6 @@
 </head>
 <body>
 
-
 	<!----------------------- ログイン時 ----------------------->
 	<s:if test="#session.userId != null && #session.loginFlg != 0">
 
@@ -105,7 +104,7 @@
 								class="nav-text"> login </span>
 						</a></li>
 
-						<li class="has-subnav"><a href="#"> <i
+						<li class="has-subnav"><a href="<s:url action="GoCollectionsAction"/>"> <i
 								class="fa fa-book fa-2x"></i> <span class="nav-text">Gallary
 							</span>
 						</a></li>

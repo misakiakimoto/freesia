@@ -2,6 +2,8 @@ package com.internousdev.freesia.action;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
@@ -75,7 +77,7 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
     /**
      * イメージパス
      */
-    private String imagepath1;
+    private File imagepath1;
 
 
 
@@ -88,8 +90,6 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
      * 表示画像
      */
     private BufferedImage imageData;
-
-
 
     /**
     * 商品情報を編集する実行メソッド
@@ -126,10 +126,13 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
         String result = ERROR;
         AdminItemUpdateDAO dao = new AdminItemUpdateDAO();
 
+        String basePath=request.getServletContext().getRealPath("/");
+
 
         if (session.get("userId") != null) {
+            String path = uploadFile(basePath,session.get("userId").toString());
             userId = (int) session.get("userId");
-            result= dao.insert(userId, herName, comment, title, imagepath1);
+            result= dao.insert(userId, herName, comment, title, path);
         }
         result = SUCCESS;
 
@@ -138,46 +141,29 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
     }
 
 
-    public String uploadFile(int picno,int num,String basePath) throws Exception{
-        String lastPath="img/collections"+(picno+1)+".png";
+    public String uploadFile(String basePath,String userId) throws Exception{
+        Date date = new Date();
+        SimpleDateFormat d1 = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+        String q1 = d1.format(date); // format(d)のdは、Date d = new Date();のd
+        String lastPath="img/collections/"+q1+"_"+userId+".png";
+        System.out.println(date.toString());
+        System.out.println(lastPath);
         String fileName=basePath+lastPath;
+
+        System.out.println(fileName);
 
         tmpfile=new File(fileName);
         tmpfile.createNewFile();
-        return lastPath;
-    }
 
-    public String renameFile(int picno,int num,String prevPath,String basePath) throws Exception{
-        String lastPath="img/collections"+(picno+1)+".png";
-        String fileName_new=basePath+lastPath;
-        String fileName_old=basePath+prevPath;
-        String fileName_copy=fileName_old+"_copy.png";
+        imageData=ImageIO.read(imagepath1);
 
-        File tmpfile_old=new File(fileName_old);
-        File tmpfile_new=new File(fileName_new);
-        File tmpfile_copy=new File(fileName_copy);
-        tmpfile_copy.delete();
-
-        if(fileName_old.indexOf("/ItemImage_")!=-1){
-            tmpfile_old.renameTo(tmpfile_copy);
-            tmpfile_new.delete();
-            tmpfile_old.delete();
-            if(tmpfile_copy.renameTo(tmpfile_new)){
-                tmpfile_copy.delete();
-                return lastPath;
-            }else{
-                return "failed";
-            }
+        if(ImageIO.write(imageData, "png", tmpfile)){
+            return lastPath;
         }else{
-            tmpfile_new.createNewFile();
-            imageData=ImageIO.read(tmpfile_old);
-            if(ImageIO.write(imageData, "png", tmpfile_new)){
-                return lastPath;
-            }else{
-                return "failed";
-            }
+            return "failed";
         }
     }
+
     /**
      * セッション情報を取得
      * @return session セッション情報
@@ -247,7 +233,7 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
      * イメージパスを取得
      * @return imagePath イメージパス
      */
-    public String getImagepath1() {
+    public File getImagepath1() {
         return imagepath1;
     }
 
@@ -255,7 +241,7 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
      * イメージパスを設定
      * @param imagePath イメージパス
      */
-    public void setImagepath1(String imagepath1) {
+    public void setImagepath1(File imagepath1) {
         this.imagepath1 = imagepath1;
     }
 

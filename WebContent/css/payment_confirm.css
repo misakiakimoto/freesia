@@ -1,21 +1,9 @@
+.container{
+	margin:auto;
+}
 .centered {
 	text-align: center;
 }
-
-td {
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-}
-
-th {
-	background-color: black;
-	color: white;
-	opacity: 0.9;
-}
-
-
-
 .white-background {
 	background-color: white;
 }
@@ -23,30 +11,66 @@ th {
 .height-adjust {
 	height: 100%;
 }
-
 .button {
 	display: inline-flex;
 	padding: auto;
 }
-
-
-.table-scroll {
-		min-width: 480px;
-	}
-	.scrollbar {
-		overflow: auto;
-		white-space: nowrap;
-	}
-	.scrollbar::-webkit-scrollbar {
-		height: 5px;
-	}
-	.scrollbar::-webkit-scrollbar-track {
-		background: #F1F1F1;
-	}
-	.scrollbar::-webkit-scrollbar-thumb {
-		background: #BCBCBC;
-	}
-
 h1{
 text-align: center;
 }
+.table table-striped {
+
+}
+
+.table table-striped{
+  width:100%;
+  border: 2px solid #d6ceb4;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-align;center;
+
+}
+.container{
+	margin-left:80px;
+}
+
+td{
+padding: 10px 20px;
+text-align: left;
+vertical-align: top;
+color: #595960;
+background-color: #ffffff;
+border-top: dotted 1px #e0dccc;
+overflow: hidden;
+word-break: break-all;
+word-wrap: break-word;
+text-align: center;
+display: table-cell;
+vertical-align: middle;
+}
+
+@media (max-width: 400px){
+h3{
+	margin-left:20px;
+}
+
+th{
+  width:80%;
+  display:block;
+  margin: 0 auto;
+
+  border:none;
+  border-radius: 3px;
+}
+ td{
+  display: list-item;
+  width: 90%;
+  margin-left:80px;
+  border-top: none !important;
+}
+.table table-striped{
+  margin-left:70px;
+}
+
+}/* end */

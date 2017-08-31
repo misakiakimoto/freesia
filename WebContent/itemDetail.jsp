@@ -39,6 +39,7 @@
 	</header>
 
 	<div class="container">
+	<h3>item detail</h3>
 		<div class="row">
 			<s:iterator value="displayList">
 
@@ -57,13 +58,13 @@
 				</div>
 
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<h2>
-						<s:property value="itemName" />
-					</h2>
 					<h3>
+						♡<s:property value="itemName" />
+					</h3>
+					<h4>
 						<fmt:formatNumber value="${price}" pattern="###,###,###" />
 						<s:text name="lang.itemdetail.en" />
-					</h3>
+					</h4>
 				</div>
 
 				<div>
@@ -357,7 +358,7 @@
 				</s:elseif>
 
 
-
+<br>
 				<div class="text">
 					<h4>
 						<s:text name="lang.itemdetail.itemdetail" />
@@ -380,9 +381,6 @@
 	<script
 		src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-	<div class="footer" align="center">
-		<s:include value="footerLoad.jsp" />
-	</div>
 
 </body>
 

@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="container">
+
             <div class="col-lg-0">
             <div class="row">
             <s:include value="header.jsp" />
@@ -24,6 +25,7 @@
             </div>
 
         <div class="col-lg-12">
+        <h3>collections</h3>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <s:iterator value="collectionsList">
 				<div class="template">

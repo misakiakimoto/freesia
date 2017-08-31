@@ -48,11 +48,11 @@ public class PurchaseDetailDAO {
         ArrayList<PurchaseDetailDTO> UserPurchaseHistoryList = new ArrayList<PurchaseDetailDTO>();
         int k = 1;
 
-        String sql = "select * from purchases_details left join items on purchases_details.item_id = items.item_id where user_id=? and items_name=?";
+        String sql = "select * from purchases left join items on purchases.item_id = items.item_id where user_id=? and items_name=?";
 
         if (itemsName.equals("")) {
 
-            sql = "select * from purchases_details left join items on purchases_details.item_id = items.item_id where user_id=?";
+            sql = "select * from purchases left join items on purchases.item_id = items.item_id where user_id=?";
             k = 2;
         }
         if (userId == 0) {

@@ -8,7 +8,12 @@
 	<!-- 国際化 -->
 	<constant name="struts.custom.i18n.resources"
 		value="
-				com.internousdev.freesia.property.login
+				com.internousdev.freesia.property.login,
+				com.internousdev.freesia.property.cart,
+				com.internousdev.freesia.property.payment,
+				com.internousdev.freesia.property.payment_confirm,
+				com.internousdev.freesia.property.paymentComplete,
+				com.internousdev.freesia.property.itemdetail
 				" />
 
 <package name="com.internousdev.freesia.action" extends="struts-default">

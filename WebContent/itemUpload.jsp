@@ -39,7 +39,7 @@ Optional<String> editid = Optional.ofNullable(request.getParameter("id"));
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
-  <link href="css/Wallpaper.css" rel="stylesheet">
+  <link href="css/itemUpload.css" rel="stylesheet">
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
@@ -47,18 +47,26 @@ Optional<String> editid = Optional.ofNullable(request.getParameter("id"));
    </head>
 
 <body>
+
 <header><s:include value="header.jsp" /></header>
+
+<div class="container">
+<h3 style="text-align:left">item upload</h3>
+<h4>アップロードした写真はGarallyに投稿されます♪</h4>
 <s:form action="AdminItemUpdateAction" enctype="multipart/form-data">
 
 <input type="hidden" name="userId"/>
-             <s:text name="lang.admin_itemedit.itemname" /><br>
-             <input class="editbox editbox_long" type="text" name="herName"/><br>
-             <input class="editbox editbox_long" type="text" name="title"/><br>
+             <p> name</p>
+             <input class="editbox editbox_long" type="text" name="herName"/><br><br>
 
-  <s:text name="lang.admin_itemedit.itemDescription" /><br>
-             <textarea class="editbox editbox_big" wrap="soft" name="comment"></textarea><br>
-<input type="file" id="upfile" name="imagepath1"
-                   accept="image/*">
+             <p> title</p>
+             <input class="editbox editbox_long" type="text" name="title"/><br><br>
+
+             <p> description</p>
+             <textarea class="editbox editbox_big" wrap="soft" name="comment"></textarea><br><br>
+             <div class="center" style="text-align:center">
+<input style="text-align:center" type="file" id="upfile" name="imagepath1"
+                   accept="image/*"></div>
 
 
 <table class="imagelist">
@@ -89,11 +97,11 @@ Optional<String> editid = Optional.ofNullable(request.getParameter("id"));
         </script>
 
 
-
+<br>
         <div class="btn_center">
-        <input type="submit" class="editbtn" value='<s:text name = "lang.admin_itemedit.ToEditThisContent"/>'/>
+        <input type="submit" class="editbtn" value='送信'/>
         </div>
 </s:form>
-
+</div>
 </body>
 </html>

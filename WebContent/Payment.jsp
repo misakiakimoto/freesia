@@ -56,19 +56,13 @@
   <body>
     <s:include value="header.jsp" />
       <div class="container">
-       <h2><s:text name="lang.payment.payment" /></h2>
+       <h2 style="margin-bottom:20px;"><s:text name="lang.payment.payment" /></h2>
            <div class="formarea">
-           <h3><s:text name="lang.payment.fillin" /></h3>
+           <h4><s:text name="lang.payment.fillin" /></h4>
            <s:form action="CheckCreditInfomationAction" id="creditPay">
 
             <table class="payment">
-              <tr>
-                <td><s:text name="lang.payment.cardType" /></td>
-                <td><input type="radio" name="creditBrand" value="1" checked>Visa
-                    <input type="radio" name="creditBrand" value="2">Master
-                    <input type="radio" name="creditBrand" value="3">AmericanExpress
-                </td>
-              </tr>
+
               <tr>
                 <td><s:text name="lang.payment.cardNumber" /><br><s:text name="lang.payment.cardHankaku" /></td>
                 <td><input type="text" name="creditNumber" class="validate[required,minSize[15],maxSize[16],custom[onlyNumberSp]] text-input" id="creditNumber"><br>
@@ -117,7 +111,7 @@
 
   </body>
   <footer style="text-align:center">
-  <s:include value="footerLoad.jsp"/>
+
   </footer>
 
 </html>

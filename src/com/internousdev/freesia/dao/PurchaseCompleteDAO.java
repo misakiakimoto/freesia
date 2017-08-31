@@ -85,7 +85,7 @@ public class PurchaseCompleteDAO {
         con = db.getConnection();
         CartDTO dto = new CartDTO();
         String select = "select * from carts where user_id = ?";
-        String insert = "insert into purchases_outlines(user_id, total_price) values(?, ?)";
+        String insert = "insert into purchases(user_id, total_price) values(?, ?)";
         try {
             PreparedStatement ps1 = con.prepareStatement(select);
             ps1.setInt(1, userId);
@@ -128,7 +128,7 @@ public class PurchaseCompleteDAO {
         MySqlConnector db = new MySqlConnector("freesia");
         Connection con = null;
         con = db.getConnection();
-        String sql1 = "insert into purchases_outlines(user_id, total_price) values(?, ?)";
+        String sql1 = "insert into purchases(user_id, total_price) values(?, ?)";
         String sql2 = "insert into purchases_details(purchase_id, user_id, items_id, quantities, multiplied_price) values(?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql1, java.sql.Statement.RETURN_GENERATED_KEYS);

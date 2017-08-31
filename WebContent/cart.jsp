@@ -39,16 +39,14 @@
 <link rel="stylesheet"
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-<!-- Custom CSS -->
-<link href="css/Wallpaper.css" rel="stylesheet">
-
 <!-- cart.css -->
-<link rel="stylesheet" href="css/cart1.css">
+<link rel="stylesheet" href="css/cart.css">
 
 <!-- header -->
 
 <!-------------------------------------------- ↑↑↑↑↑header↑↑↑↑↑ -------------------------------------------->
 <body>
+
 	<div class="titlespace">
 		<div class="title">
 			<header>
@@ -57,12 +55,15 @@
 		</div>
 	</div>
 	<div class="container">
+
 		<div class="errorMessage"><s:property value="message"/></div>
-		<table class="table table-bordered">
+		<h3>cart</h3>
+		<!--  <div class="table-responsive">-->
+		<table class="table table-striped">
 			<tbody>
 				<s:iterator value="cartList">
 					<tr>
-						<td><br> <br>
+						<td  ><br> <br>
 							<h4>
 								<s:property value="itemName" />
 							</h4>
@@ -78,8 +79,9 @@
 								<s:property value="stocks" />
 								<div class=tdstyle><s:property value="quantities" /></div>
 							</s:elseif>
-							<td><img src="./<s:property value="imagePath"/>" height="100"
-									width="100"></td>
+
+							<td ><img src="./<s:property value="imagePath"/>" height="150"
+									width="150"></td>
 
 
 						<td><div class="update">
@@ -124,13 +126,14 @@
 				</s:iterator>
 			</tbody>
 		</table>
+
 		<br> <br>
-		<hr style="border: 2px solid grey;width100%;">
-		<h2 class="text-danger text-right">
+		<hr style="border: 0.5px solid grey;width100%;">
+		<h3 class="text-danger text-right">
 			<s:text name="lang.cart.bill" />
 			<fmt:formatNumber value="${amountAll}" pattern="###,###,###" />
 			<s:text name="lang.cart.taxin" />
-		</h2>
+		</h3>
 		<br> <br>
 
 
@@ -173,7 +176,5 @@
 </body>
 
 <!-------------------------------------------- ↓↓↓↓↓footer↓↓↓↓↓ -------------------------------------------->
-<footer>
-	<s:include value="footerLoad.jsp" />
-</footer>
+
 </html>

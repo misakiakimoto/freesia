@@ -16,10 +16,8 @@
 <title><s:text name="lang.payment_confirm.title" /></title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/style.css" rel="stylesheet">
-<link href="css/Wallpaper.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
 <link href="css/payment_confirm.css" rel="stylesheet">
 
 
@@ -28,6 +26,8 @@
   src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <!-- BootstrapのJS読み込み -->
+
+
 <script src="./js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./js/jquery.pagination.js"></script>
 
@@ -65,7 +65,7 @@
   <!-- ヘッダーここから -->
   <s:include value="header.jsp" />
   <!-- ここまで -->
-
+<div class ="framework">
   <div class="container">
     <!-- ログイン時 -->
     <s:if test="%{#session.userId != null}">
@@ -77,17 +77,16 @@
         <br>
         <s:text name="lang.payment_confirm.confirm" />
         <br>
-        <h1>
+        <h3 style="text-align:left">
           <s:text name="lang.payment_confirm.order" />
-        </h1>
+        </h3>
       </div>
       <br>
       <br>
 
 
-      <div class="col-sm-10 col-sm-offset-1 scrollbar">
-        <div class="list2">
-          <table class="table table-scroll table-bordered">
+         <div class="col-sm-12 centered">
+          <table class="table table-striped">
 
             <tr>
 
@@ -118,17 +117,10 @@
         </div>
 
         <br>
-      </div>
+
 
       <table class="col-sm-12 centered">
-        <tr>
-          <!-- 商品の数の合計
-          <td colspan="2">
-            <!--品物数-<s:text name="lang.payment_confirm.numberOfItems" />：<s:property
-              value="amountAll" />
-            <s:text name="lang.payment_confirm.itemnumber" />
-          </td>-->
-        </tr>
+
 
         <tr>
           <!-- すべての商品の単価の合計を表示 -->
@@ -144,12 +136,12 @@
           <!-- 小計＋送料＋消費税 -->
           <td colspan="2">
             <!--合計-->
-            <h1 style="margin-bottom: 60px">
+            <h2 style="margin-bottom: 60px">
               <s:text name="lang.payment_confirm.totalPrice" />
               ：
               <s:property value="amountAll" />
               <s:text name="lang.payment_confirm.yen" />
-            </h1>
+            </h2>
           </td>
         </tr>
 
@@ -160,9 +152,9 @@
       <div class="col-sm-12">
         <hr style="border: 1px solid grey;width100%;" />
         <br> <br> <br>
-        <h1>
+        <h3 style="text-align:center">
           <s:text name="lang.payment_confirm.settlementinfo" />
-        </h1>
+        </h3>
       </div>
 
 
@@ -193,12 +185,12 @@
             ${number.length()==16?number.substring(12,16):number.substring(11,15)}
             <br>
             <!--          期限　年 -->
-            <s:text name="lang.payment_confirm.limit" />
+            <s:text name="lang.payment_confirm.limit1" />
             ：
             <s:property value="expirationYear" />
             <br>
             <!--          期限　月 -->
-            <s:text name="lang.payment_confirm.limit" />
+            <s:text name="lang.payment_confirm.limit2" />
             ：
             <s:property value="expirationMonth" />
             <br>
@@ -253,16 +245,13 @@
       <div class="col-sm-12">
         <br> <br> <br> <br>
       </div>
-
-
-
     </s:if>
     <!-- 未ログイン時 -->
     <s:else>
       <s:text name="lang.payment_confirm.afterlogin" />
     </s:else>
     <!-- ここまで -->
-
+</div>
   </div>
 
   <!-- フッター -->
@@ -272,7 +261,7 @@
 </body>
 
 <footer style="text-align: center">
-  <s:include value="footerLoad.jsp" />
+
 </footer>
 
 </html>
