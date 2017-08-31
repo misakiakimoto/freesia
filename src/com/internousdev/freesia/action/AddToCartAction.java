@@ -48,6 +48,8 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
     */
     private int quantities;
 
+    private int stocks;
+
     /**
     * 合計金額
     */
@@ -70,6 +72,8 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
     */
     private Map<String, Object> session;
 
+    private String imagepath;
+
     /**
     * カートに商品を追加する実行メソッド
     * @author MISAKI AKIMOTO
@@ -86,12 +90,15 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 
         String result = ERROR;
 
-        if (session.containsKey("userId")) {
+         if (session.containsKey("userId")) {
             userId = (int) session.get("userId");
             AddToCartDAO dao = new AddToCartDAO();
             itemStatus = dao.itemStatus(itemId);
 
-            addCount = dao.addToCart(userId, itemId);
+
+            if(dao.addToCart(userId, itemId, quantities)){
+                return result;
+            }
             cartList = dao.selected(userId);
             if (cartList.size() > 0) {
                 for (int i = 0; i < cartList.size(); i++) {
@@ -99,7 +106,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
                 }
                 result = SUCCESS;
             }
-        }
+         }
         return result;
     }
 
@@ -317,5 +324,33 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
      */
     public void setSession(Map<String, Object> session) {
         this.session = session;
+    }
+
+    /**
+     * @return stocks
+     */
+    public int getStocks() {
+        return stocks;
+    }
+
+    /**
+     * @param stocks セットする stocks
+     */
+    public void setStocks(int stocks) {
+        this.stocks = stocks;
+    }
+
+    /**
+     * @return imagepath
+     */
+    public String getImagepath() {
+        return imagepath;
+    }
+
+    /**
+     * @param imagepath セットする imagepath
+     */
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 }

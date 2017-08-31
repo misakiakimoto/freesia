@@ -46,7 +46,7 @@
 
 <body>
 
- <header><s:include value="Header.jsp" /></header>
+ <header><s:include value="header.jsp" /></header>
     <h2><s:text name="lang.paymentComplete.thank"  /></h2>
     <h3><s:text name="lang.paymentComplete.again"  /></h3>
 <br><br>

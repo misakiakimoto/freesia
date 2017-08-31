@@ -31,7 +31,7 @@ public class GoCartDAO {
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
         String sql = "select * from carts where user_id=?";
-        String select2 = "SELECT * FROM items WHERE item_id = ?";
+        String select2 = "SELECT * FROM items WHERE items_id = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -41,16 +41,17 @@ public class GoCartDAO {
                 CartDTO dto = new CartDTO();
                 dto.setUserId(rs.getInt("user_id"));
                 dto.setCartId(rs.getInt("cart_id"));
-                dto.setItemId(rs.getInt("item_id"));
+                dto.setItemId(rs.getInt("items_id"));
                 dto.setQuantities(rs.getInt("quantities"));
+
 
                 PreparedStatement ps2 = con.prepareStatement(select2);
                 ps2.setInt(1, dto.getItemId());
                 ResultSet rs2 = ps2.executeQuery();
 
                 while (rs2.next()) {
-
-                    dto.setItemName(rs2.getString("item_name"));
+                    dto.setImagepath(rs2.getString("img_path"));
+                    dto.setItemName(rs2.getString("items_name"));
                     dto.setPrice(rs2.getFloat("price"));
                     dto.setSubtotal((int) (dto.getPrice() * dto.getQuantities()));
                 }

@@ -34,7 +34,7 @@ public class AddToCartDAO {
         Connection con = db.getConnection();
         ArrayList<ItemDTO> itemStatus = new ArrayList<ItemDTO>();
 
-        String sql = "select * from items where item_id = ?";
+        String sql = "select * from items where items_id = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -42,11 +42,8 @@ public class AddToCartDAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 ItemDTO dto = new ItemDTO();
-                dto.setItemName(rs.getString("item_name"));
+                dto.setItemName(rs.getString("items_name"));
                 dto.setPrice(rs.getFloat("price"));
-                dto.setStocks(rs.getInt("stocks"));
-                dto.setItemDetail(rs.getString("item_detail"));
-
                 itemStatus.add(dto);
             }
         } catch (SQLException e) {
@@ -71,18 +68,64 @@ public class AddToCartDAO {
      * @return addCount 成否を格納する変数
      */
 
-    public int addToCart(int userId, int itemId) {
+    public boolean addToCart(int userId, int itemId,int quantities) {
+        ResultSet rs;
         int addCount = 0;
+        boolean errorCheck=true;
+
 
         Connection con = new MySqlConnector("freesia").getConnection();
         System.out.println(userId + "," + itemId);
-        String sql = "insert into carts (user_id,item_id) values(?,?)";
+        String sql1 = "select * from items where items_id=?";
+        String sql2 = "select * from carts where user_id=? and items_id=?";
+        String sql3 = "insert into carts (user_id,items_id,quantities) values(?,?,?)";
+        String sql4 = "update items set stocks=stocks-? where items_id=?";
 
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
+            PreparedStatement ps = con.prepareStatement(sql1);
+            ps.setInt(1, itemId);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                if(quantities>rs.getInt("stocks")){
+                    return errorCheck;
+                }
+            }
+
+            CartDeleteDAO delete = new CartDeleteDAO();
+            ps.close();
+            rs.close();
+            ps = con.prepareStatement(sql2);
             ps.setInt(1, userId);
             ps.setInt(2, itemId);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                quantities += rs.getInt("quantities");
+                delete.delete(userId, rs.getInt("cart_id"));
+            }
+
+            if (quantities > 50){
+                quantities = 50;
+            }
+
+            ps.close();
+            ps = con.prepareStatement(sql3);
+            ps.setInt(1, userId);
+            ps.setInt(2, itemId);
+            ps.setInt(3, quantities);
             addCount = ps.executeUpdate();
+
+            if(addCount>0){
+                ps.close();
+                ps = con.prepareStatement(sql4);
+                ps.setInt(1,quantities);
+                ps.setInt(2,itemId);
+
+                addCount = ps.executeUpdate();
+                if(addCount>0){
+                    errorCheck = false;
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -94,7 +137,7 @@ public class AddToCartDAO {
                 }
             }
         }
-        return addCount;
+        return errorCheck;
     }
 
     /**
@@ -108,12 +151,11 @@ public class AddToCartDAO {
     public ArrayList<CartDTO> selected(int userId) {
 
 
-        MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "freesia", "root",
-                "mysql");
+        MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = db.getConnection();
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
         String sql = "select * from carts where user_id=?";
-        String select2 = "SELECT * FROM items WHERE item_id = ?";
+        String select2 = "SELECT * FROM items WHERE items_id = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -123,8 +165,9 @@ public class AddToCartDAO {
                 CartDTO dto = new CartDTO();
                 dto.setUserId(rs.getInt("user_id"));
                 dto.setCartId(rs.getInt("cart_id"));
-                dto.setItemId(rs.getInt("item_id"));
+                dto.setItemId(rs.getInt("items_id"));
                 dto.setQuantities(rs.getInt("quantities"));
+
                 cartList.add(dto);
 
                 PreparedStatement ps2 = con.prepareStatement(select2);
@@ -132,9 +175,10 @@ public class AddToCartDAO {
                 ResultSet rs2 = ps2.executeQuery();
 
                 while (rs2.next()) {
-
-                    dto.setItemName(rs2.getString("item_name"));
+                    dto.setImagepath(rs2.getString("img_path"));
+                    dto.setItemName(rs2.getString("items_name"));
                     dto.setPrice(rs2.getFloat("price"));
+                    dto.setStocks(rs2.getInt("stocks"));
                 }
             }
         } catch (SQLException e) {

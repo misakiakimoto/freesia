@@ -28,8 +28,7 @@
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/payment.css">
     <link rel="stylesheet" href="css/validationEngine.jquery.css">
-    <link href="css/footer.css" rel="stylesheet">
-    <link href="css/Wallpaper.css" rel="stylesheet">
+
 
     <!-- Javascripts
     ================================================== -->
@@ -55,7 +54,7 @@
   </head>
 
   <body>
-    <s:include value="Header.jsp" />
+    <s:include value="header.jsp" />
       <div class="container">
        <h2><s:text name="lang.payment.payment" /></h2>
            <div class="formarea">

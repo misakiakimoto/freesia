@@ -15,9 +15,7 @@
 <!-- Bootstrap cdn -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <!-- css -->
-<link rel="stylesheet" href="css/sidebar.css" type="text/css">
 <link rel="stylesheet" href="css/login.css" type="text/css">
-<link rel="stylesheet" href="css/Account.css" type="text/css">
 <!-- 国際化 -->
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.freesia.log"
@@ -26,26 +24,33 @@
 <meta charset="UTF-8">
 
   <!--  ヘッダー -->
-  <jsp:include page="Header.jsp"/>
+
+
 
 
 <title><s:text name="lang.log.login" /></title>
+<jsp:include page="header.jsp"/>
 </head>
+
+
 <body>
+
+
+
+
 <div class="content">
+<div class="bkRGBA">
   <div class="wrapper">
     <h2 class="errormsg">
       <s:property value="loginErrorMsg" />
     </h2>
     <div class="container">
-
-      <div class="col-sm-4"> </div>
+      <div class="col-sm-3"> </div>
       <s:form action="LoginAction" method="post" theme="simple">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
+
           <table class="table table-bordered">
-            <tr style="background-color: ;">
-              <td><h3 class="login">Login</h3></td>
-            </tr>
+
             <tr>
               <td>Email&emsp;<span style="color: red;"></span><input type="email"
                 maxlength="40" required="required" name="email"  placeholder="email@gmail.com"/>
@@ -58,31 +63,16 @@
               </td>
             </tr>
             <tr>
-              <td><button type="submit" class="btn btn-primary">Login</button></td>
-            </tr>
-
-           <!--  <tr>
-              <td><s:url var="twitter" action="GoTwitterAction" /> <s:a
-                href="%{twitter}">
-                <img src="img/SNS/twitter.jpg" style="width: 200px">
-               </s:a></td>
-             </tr>
-
-          <tr>
-            <td><s:url var="facebook" action="GoFacebookAction" /> <s:a
-                href="%{facebook}">
-                <img src="img/SNS/facebook.jpg" style="width: 200px">
-              </s:a></td>
-          </tr>-->
-
+              <td><button type="submit" class="btn btn-info" style="float:right">Login</button></td>
           </table>
         </div>
       </s:form>
       </div>
 </div>
 </div>
+</div>
 </body>
 <footer>
-	<s:include value="footerLoad.jsp" />
+
 </footer>
 </html>

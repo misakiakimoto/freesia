@@ -33,7 +33,7 @@ public class PurchaseCompleteDAO {
         MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
         ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
-        String sql = "select * from items where item_id=?";
+        String sql = "select * from items where items_id=?";
         String check = "NG";
         for (int i = 0; i < cartList.size(); i++) {
             check = "NG";
@@ -52,7 +52,7 @@ public class PurchaseCompleteDAO {
                 while (rs.next()) {
 
                     dto.setStocks(rs.getInt("stocks"));
-                    dto.setItemName(rs.getString("item_name"));
+                    dto.setItemName(rs.getString("items_name"));
                     itemList.add(dto);
                 }
             } catch (SQLException e) {
@@ -129,7 +129,7 @@ public class PurchaseCompleteDAO {
         Connection con = null;
         con = db.getConnection();
         String sql1 = "insert into purchases_outlines(user_id, total_price) values(?, ?)";
-        String sql2 = "insert into purchases_details(purchase_id, user_id, item_id, quantities, multiplied_price) values(?, ?, ?, ?, ?)";
+        String sql2 = "insert into purchases_details(purchase_id, user_id, items_id, quantities, multiplied_price) values(?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql1, java.sql.Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, userId);
@@ -208,11 +208,11 @@ public class PurchaseCompleteDAO {
         int ret = 0;
         MySqlConnector db = new MySqlConnector("freesia");
         Connection con = db.getConnection();
-        String stockUpdate = "UPDATE items SET stocks = ? WHERE item_id = ?";
+        String stockUpdate = "UPDATE items SET stocks = ? WHERE items_id = ?";
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
         ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
         String sql = "select * from carts where user_id=?";
-        String itemSql = "select * from items where item_id=?";
+        String itemSql = "select * from items where items_id=?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -220,7 +220,7 @@ public class PurchaseCompleteDAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 CartDTO dto = new CartDTO();
-                dto.setItemId(rs.getInt("item_id"));
+                dto.setItemId(rs.getInt("items_id"));
                 dto.setQuantities(rs.getInt("quantities"));
                 cartList.add(dto);
             }
@@ -285,11 +285,11 @@ public class PurchaseCompleteDAO {
         int ret = 0;
         MySqlConnector db = new MySqlConnector( "freesia");
         Connection con = db.getConnection();
-        String stockUpdate = "UPDATE items SET sales = ? WHERE item_id = ?";
+        String stockUpdate = "UPDATE items SET sales = ? WHERE items_id = ?";
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
         ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
         String sql = "select * from carts where user_id=?";
-        String itemSql = "select * from items where item_id=?";
+        String itemSql = "select * from items where items_id=?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -297,7 +297,7 @@ public class PurchaseCompleteDAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 CartDTO dto = new CartDTO();
-                dto.setItemId(rs.getInt("item_id"));
+                dto.setItemId(rs.getInt("items_id"));
                 dto.setQuantities(rs.getInt("quantities"));
                 cartList.add(dto);
             }

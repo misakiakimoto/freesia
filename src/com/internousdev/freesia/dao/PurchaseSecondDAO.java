@@ -32,7 +32,7 @@ public class PurchaseSecondDAO {
         ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
         String sql = "select * from carts where user_id=?";
-        String sql2 = "select * from items where item_id = ?";
+        String sql2 = "select * from items where items_id = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -41,7 +41,7 @@ public class PurchaseSecondDAO {
             while (rs.next()) {
                 CartDTO dto = new CartDTO();
                 dto.setUserId(rs.getInt("user_id"));
-                dto.setItemId(rs.getInt("item_id"));
+                dto.setItemId(rs.getInt("items_id"));
                 dto.setQuantities(rs.getInt("quantities"));
                 cartList.add(dto);
 
@@ -51,7 +51,7 @@ public class PurchaseSecondDAO {
 
                 while (rs2.next()) {
 
-                    dto.setItemName(rs2.getString("item_name"));
+                    dto.setItemName(rs2.getString("items_name"));
                     dto.setPrice(rs2.getFloat("price"));
                 }
             }

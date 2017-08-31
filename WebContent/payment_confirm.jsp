@@ -63,7 +63,7 @@
 
 <body>
   <!-- ヘッダーここから -->
-  <s:include value="Header.jsp" />
+  <s:include value="header.jsp" />
   <!-- ここまで -->
 
   <div class="container">

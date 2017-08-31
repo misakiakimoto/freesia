@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+body{
+	background: url("../img/TopPage/t1.jpg") no-repeat;
+    background-size:100% 100vh;
+
+}
+.bkRGBA{
+  /* 背景画像の透過用css */
+  height: 100vh;
+  background: rgba(255,255,255,0.7);
+}
+.table-bordered{border-style:none;}
+
+.container{
+	position: fixed;
+top: 50%;
+left: 40%;
+transform: translate(-50%, -50%);
+}

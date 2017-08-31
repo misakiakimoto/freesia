@@ -41,12 +41,14 @@ public class CartDTO {
     /**
      * イメージパス
      */
-    private String imgPath;
+    private String imagepath;
 
     /**
      * 小計
      */
     private float subtotal;
+
+    private int stocks;
 
     /**
      * カート内商品IDを取得するメソッド
@@ -148,16 +150,16 @@ public class CartDTO {
      * イメージファイルパスを取得するメソッド
      * @return imgPath イメージファイルパス
      */
-    public String getImgPath() {
-        return imgPath;
+    public String getImagePath() {
+        return imagepath;
     }
 
     /**
      * イメージファイルパスを格納するメソッド
      * @param imgPath セットする imgPath
      */
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 
     /**
@@ -174,6 +176,20 @@ public class CartDTO {
      */
     public void setSubtotal(float subtotal) {
         this.subtotal = subtotal;
+    }
+
+    /**
+     * @return stocks
+     */
+    public int getStocks() {
+        return stocks;
+    }
+
+    /**
+     * @param stocks セットする stocks
+     */
+    public void setStocks(int stocks) {
+        this.stocks = stocks;
     }
 
 }

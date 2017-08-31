@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+table.item{
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    width: 500px;
+    border: 3px dashed #fed0e0;
+    rules: none;
+    }
+.text{
+    vertical-align: top;
+    text-align: left;
+    padding: 10px;
+
+    }
+.pic{
+    width: 200px;
+    }
+.imgtd{
+	width: 210px;
+	padding: 5px;
+}
+.items{
+    margin: 10px;
+    padding: 10px;
+    width: 550px;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+     }
+.users{
+	float: left;
+	margin-left: 10px;
+    padding: 10px;
+    width: 550px;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+     }
+.submit{
+	position: absolute;
+	left: 580px;
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+     }
+.clear{
+    clear: both;
+}
+.aa{
+	position: relative;
+    width: 900px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}

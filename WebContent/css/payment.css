@@ -1,0 +1,64 @@
+.formarea {
+    margin: 10px auto;
+    padding: 20px;
+    height: auto;
+    width: 550px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* 入力フォーム周りの装飾 */
+table.payment td{
+    padding: 6px;
+    text-align: left;
+}
+#creditNumber,#nameE,#year,#month,#securityCode {
+	border:0;
+	padding:8px;
+	color:black;
+	border:solid 1px #ccc;
+	margin:0 0 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: white;
+	font-size: medium;
+}
+.example{
+    font-size: small;
+    color: #708090;
+}
+
+/* セキュリティコード周りの装飾 */
+.security{
+    font-size: x-small;
+    color: #708090;
+    text-align: left;
+}
+.security:hover{
+    color:#E48E00;
+    text-decoration:underline;
+    cursor: pointer;
+}
+img.security{
+    width:300px;
+    height: auto;
+}
+#securityBox {
+    margin: 10px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    border: 1px solid #FF9900;
+    text-align: left;
+}
+h3{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+footer{
+
+}

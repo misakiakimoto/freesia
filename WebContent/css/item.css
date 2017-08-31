@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+body{
+	margin-left:15%;
+
+}
+
+.template{
+	margin:20px;
+	float:left;
+	width:250px;
+}

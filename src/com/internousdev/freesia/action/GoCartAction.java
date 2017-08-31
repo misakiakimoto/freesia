@@ -45,7 +45,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
     /**
      *イメージパスファイル
      */
-    private String imgPath;
+    private String imagepath;
     /**
      * 合計金額
      */
@@ -169,16 +169,16 @@ public class GoCartAction extends ActionSupport implements SessionAware {
      * イメージパスファイルを取得するメソッド
      * @return imgPath　イメージパスファイル
      */
-    public String getImgPath() {
-        return imgPath;
+    public String getImagepath() {
+        return imagepath;
     }
 
     /**
      * イメージパスファイルを格納するメソッド
      * @param imgPath セットする imgPath
      */
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 
     /**

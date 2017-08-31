@@ -13,6 +13,13 @@
 
 <package name="com.internousdev.freesia.action" extends="struts-default">
 
+<!-- トップサイトへ遷移するアクション -->
+		<action name="MainTopAction" class="com.internousdev.freesia.action.MainTopAction"
+			method="execute">
+			<result name="success">toppage.jsp</result>
+			<result name="error">toppage.jsp</result>
+		</action>
+
 	<!-- 正常リンク時の初期読み込みアクション(TOP商品＋Cookie)
     <action name="IndexAction" class="com.internousdev.freesia.action.IndexAction"
 			method="execute">
@@ -30,26 +37,26 @@
     <!-- ログインアクション -->
     <action name="LoginAction" class="com.internousdev.freesia.action.LoginAction"
 			method="execute">
-	<result name="success">MyPageTest.jsp</result>
+	<result name="success">toppage.jsp</result>
 	<result name="error">login.jsp</result>
-	<result name="login">MyPageTest.jsp</result> <!--管理者のログイン成功時のページ  -->
+	<result name="login">toppage.jsp</result> <!--管理者のログイン成功時のページ  -->
    </action>
 
 
-    <!-- ログアウトアクション
+    <!-- ログアウトアクション-->
    <action name="logoutAction" class="com.internousdev.freesia.action.LogoutAction"
 			method="execute">
-	<result name="success">System_reloadTop.jsp</result>
-	<result name="error">logOut.jsp</result>
-   </action>-->
+	<result name="success">toppage.jsp</result>
+	<result name="error">toppage.jsp</result>
+   </action>
 
 
-<!-- 購入履歴
-		<action name="PurchaseDetailAction" class="com.internousdev.freesia.action.PurchaseDetailAction"
+<!-- 商品一覧-->
+		<action name="ItemViewAction" class="com.internousdev.freesia.action.ItemViewAction"
 			method="execute">
-			<result name="success">MyPageTest.jsp</result>
-			<result name="error">MyPageTest.jsp</result>
-			</action>-->
+			<result name="success">item.jsp</result>
+			<result name="error">toppage.jsp</result>
+			</action>
 
 <!-- 購入履歴
 		<action name="ConAdminUpdatetAction" class="com.internousdev.freesia.action.ConAdminUpdatetAction"
@@ -104,12 +111,12 @@
 	<result name="error">toppage_error.jsp</result>
 </action>-->
 
-<!-- カートに商品を追加する
+<!-- カートに商品を追加する-->
 		<action name="AddToCartAction" class="com.internousdev.freesia.action.AddToCartAction"
 			method="execute">
-			<result name="success">Cart1.jsp</result>
+			<result name="success">cart.jsp</result>
 			<result name="error">login.jsp</result>
-		</action> -->
+		</action>
 
 
 <!-- 商品詳細画面からカート画面に遷移
@@ -118,48 +125,45 @@
 <result name="error" type="chain">System_reloadTop.jsp</result>
 </action>-->
 
-<!-- カートの商品を削除するアクション
+<!-- カートの商品を削除するアクション-->
 	<action name="CartDeleteAction" class="com.internousdev.freesia.action.CartDeleteAction"
 		method="execute">
-		<result name="success" type="chain">Cart1.jsp</result>
-		<result name="error" type="chain">Cart1.jsp</result>
-		<result name="input">reload.jsp</result>
-	</action>-->
-<!-- カートの商品を更新するアクション
+		<result name="success">System_index_cart.jsp</result>
+		<result name="error" type="chain">cart.jsp</result>
+		<result name="input">toppage.jsp</result>
+	</action>
+
+<!-- カートの商品を更新するアクション-->
 	<action name="CartUpdateAction" class="com.internousdev.freesia.action.CartUpdateAction"
 		method="execute">
-		<result name="success" type="chain">CartSelectAction</result>
-		<result name="error" type="chain">CartSelectAction</result>
-		<result name="input">reload.jsp</result>
-	</action>-->
-<!-- カート画面への遷移
+		<result name="success">System_index_cart.jsp</result>
+		<result name="error" type="chain">GoCartAction</result>
+		<result name="input">toppage.jsp</result>
+	</action>
+
+<!-- カート画面への遷移-->
         <action name="GoCartAction" class="com.internousdev.freesia.action.GoCartAction" method="execute">
             <result name="success">cart.jsp</result>
             <result name="error">cart.jsp</result>
-        </action> -->
-<!-- 支払い画面への遷移
+        </action>
+
+<!-- 支払い画面への遷移-->
 		<action name="GoSettlementAction"
 			class="com.internousdev.freesia.action.GoSettlementAction" method="execute">
-			<result name="success">payment.jsp</result>
+			<result name="success">Payment.jsp</result>
 			<result name="error">cart.jsp</result>
-			<result name="login">sessionError.jsp</result>
-		</action>-->
+			<result name="login">toppage.jsp</result>
+		</action>
 
-   <!-- 支払い画面。成功なら購入確認、エラーならクレジット情報の間違い、ログインならセッションエラーのページに飛ぶ
-		<action name="PaymentAction" class="com.internousdev.freesia.action.PaymentAction"
-		 method="execute">
-			<result name="success">paymentConfirm.jsp</result>
-			<result name="error">creditError.jsp</result>
-			<result name="login">sessionError.jsp</result>
-		</action>-->
-<!-- 購入確認画面。成功なら完了画面、在庫切れだったら在庫切れ画面、それ以外はセッションエラーに飛ぶ
+
+<!-- 購入確認画面。成功なら完了画面、在庫切れだったら在庫切れ画面、それ以外はセッションエラーに飛ぶ-->
  <action name="PurchaseCompleteAction"
    class="com.internousdev.freesia.action.PurchaseCompleteAction"
    method="execute">
    <result name="success">paymentComplete.jsp</result>
-   <result name="error">paymentConfirm.jsp</result>
-   <result name="login">sessionError.jsp</result>
-</action> -->
+   <result name="error">payment_confirm.jsp</result>
+   <result name="login">Payment.jsp</result>
+</action>
 		<!-- 管理者商品管理画面
 		<action name="AdminItemAction" class="com.internousdev.freesia.action.AdminItemAction"
 			method="execute">
@@ -199,20 +203,20 @@
 	<result name="error">Admin_errorBasic.jsp</result>
 	</action>-->
 
-	<!-- 商品の編集実行(管理者)
+	<!-- 商品の編集実行(管理者)-->
 	<action name="AdminItemUpdateAction"
 	class="com.internousdev.freesia.action.AdminItemUpdateAction"
 	method="execute">
-	<result name="success">Admin_goItemList.jsp</result>
-	<result name="error">Admin_errorBasic.jsp</result>
-	</action> -->
+	<result name="success">toppage.jsp</result>
+	<result name="error">toppage.jsp</result>
+	</action>
 
-<!-- トップから商品詳細アクション
+<!-- トップから商品詳細アクション-->
 <action name="GoItemDetailAction" class="com.internousdev.freesia.action.GoItemDetailAction"
 			method="execute">
-	<result name="success">UserItemDeta.jsp</result>
-	<result name="error">toppage_error.jsp</result>
-</action>-->
+	<result name="success">itemDetail.jsp</result>
+	<result name="error">toppage.jsp</result>
+</action>
 
          <!-- 顧客情報一覧取得(管理者)
     <action name="ConCustomerAction" class="com.internousdev.freesia.action.ConCustomerAction"
@@ -221,13 +225,6 @@
       <result name="error">ConCustomer.jsp</result>
       </action>-->
 
-<!-- 販売履歴画面
-		<action name="ConhannbairirekiAction" class="com.internousdev.freesia.action.ConhannbairirekiAction"
-			method="execute">
-			<result name="success">Conhannbairireki.jsp</result>
-			<result name="error">Conhannbairireki.jsp</result>
-		</action>-->
-
 		<!-- 問い合わせ(ユーザー)
 	<action name="InquiryAction"
 	class="com.internousdev.freesia.action.InquiryAction"
@@ -235,6 +232,25 @@
 	<result name ="success">inquiry_com.jsp</result>
 	<result name ="error">inquiry.jsp</result>
 	</action>-->
+		<!-- クレジットカード入力画面から次へ進むための処理 -->
+		<action name="CheckCreditInfomationAction"
+			class="com.internousdev.freesia.action.CheckCreditInfomationAction"
+			method="execute">
+			<result name="success" type="chain">PurchaseSecondAction</result>
+			<result name="error">Payment.jsp</result>
+		</action>
+
+		        <!-- 支払方法入力画面（旧購入画面）から購入確認画面への遷移 -->
+         <action name="PurchaseSecondAction" class="com.internousdev.freesia.action.PurchaseSecondAction" method="execute">
+         <result name="success">payment_confirm.jsp</result>
+         <result name="error">payment_confirm.jsp</result>
+         <result name="empty_cart">Payment.jsp</result>
+         </action>
+
+         <action name="GoCollectionsAction" class="com.internousdev.freesia.action.GoCollectionsAction" method="execute">
+         <result name="success">collections.jsp</result>
+         <result name="error">collections.jsp</result>
+         </action>
 
 </package>
 </struts>

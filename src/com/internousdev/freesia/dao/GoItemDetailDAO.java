@@ -37,42 +37,31 @@ public class GoItemDetailDAO {
         ItemDTO dto = new ItemDTO();
         ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
         String sql;
-        sql = "select * from items where item_id=?";
-        String sql2 = "select * from items_images where item_id=?";
+        sql = "select * from items where items_id=?";
+
         try{
             ps = con.prepareStatement(sql);
             ps.setInt(1, itemId);
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()){
-                dto.setItemId(rs.getInt("item_id"));
-                dto.setItemName(rs.getString("item_name"));
+                dto.setItemId(rs.getInt("items_id"));
+                dto.setItemName(rs.getString("items_name"));
                 dto.setPrice(rs.getFloat("price"));
                 dto.setStocks(rs.getInt("stocks"));
-                dto.setItemDetail(rs.getString("item_detail").replace("\n","<br>"));
+                dto.setItemDetail(rs.getString("items_detail").replace("\n","<br>"));
+                dto.setImagepath(rs.getString("img_path"));
                 itemList.add(dto);
-
-                ps.close();
-                ps = con.prepareStatement(sql2);
-                ps.setInt(1, itemId);
-                rs = ps.executeQuery();
-
-                int count=1;
-                if(rs.next()){
-                    while(rs.getString("img_path"+count)!=null){
-                        dto.setImagePath(count-1,rs.getString("img_path"+count));
-                        count++;
-                    }
-                }
             }
-        } catch (SQLException e) {
+
+            rs.close();
+            ps.close();
+            con.close();
+
+        }catch (SQLException e){
             e.printStackTrace();
-        } finally {
-            if (ps != null)
-                ps.close();
-            if (con != null)
-                con.close();
-        }
+            }
         return itemList;
-    }
+        }
+
 }

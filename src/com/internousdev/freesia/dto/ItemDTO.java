@@ -62,7 +62,7 @@ public class ItemDTO {
     /**
      * イメージパス
      */
-    private String[] imagePath = { "", "", "", "", "" };
+    private String imagepath ;
 
     /**
      * 登録日イメージ
@@ -78,6 +78,10 @@ public class ItemDTO {
      * インデックス
      */
     private int index;
+
+    private int quantities;
+
+
 
     /**
      * 商品IDを取得するメソッド
@@ -243,21 +247,19 @@ public class ItemDTO {
      * イメージパスを取得するメソッド
      * @return imagePath イメージパス
      */
-    public String[] getImagePath() {
-        return imagePath;
+    public String getImagepath() {
+        return imagepath;
     }
 
     /**
      * イメージパスを格納するメソッド
      * @param imagePath セットする イメージパス
      */
-    public void setImagePath(String[] imagePath) {
-        this.imagePath = imagePath;
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 
-    public void setImagePath(int num, String imagePath) {
-        this.imagePath[num] = imagePath;
-    }
+
 
     /**
      * 登録日イメージを取得するメソッド
@@ -305,6 +307,20 @@ public class ItemDTO {
      */
     public void setIndex(int index) {
         this.index = index;
+    }
+
+    /**
+     * @return quantities
+     */
+    public int getQuantities() {
+        return quantities;
+    }
+
+    /**
+     * @param quantities セットする quantities
+     */
+    public void setQuantities(int quantities) {
+        this.quantities = quantities;
     }
 
 }
