@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * TOP画面の商品一覧を表示するためのクラス
- * @author JUNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/08/16
  * @version 1.0
  */
@@ -25,7 +25,7 @@ public class ItemDisplayAction extends ActionSupport implements SessionAware {
 
     /**
      * 商品名と画像パスのリスト
-     * @author JUNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/08/16
      */
     ArrayList<ItemDisplayDTO> itemList = new ArrayList<ItemDisplayDTO>();

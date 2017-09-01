@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
 * ユーザーがアカウント詳細画面でアカウント情報を取得するためのクラス
-*@author RYOTA SHISHIKURA
+*@author MISAKI AKIMOTO
 *@version 1.0
 */
 

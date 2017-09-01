@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 商品一覧を表示するアクション
- * @author YUUKI KISHIGUCHI
+ * @author MISAKI AKIMOTO
  * @since 2017/07/13
  * @version 1.1
  */

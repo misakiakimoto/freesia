@@ -18,8 +18,8 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * TOP画面に遷移するクラス
  *
- * @author Misa Kikuchi
- * @since 2017/05/19
+ * @author MISAKI AKIMOTO
+ * @since 2017/08/19
  * @version 1.0
  */
 public class MainTopAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware {

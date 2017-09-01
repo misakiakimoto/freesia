@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * cookieを取得するための Actionクラス
- * @author JUNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/08/16
  * @version 1.0
  */
@@ -49,7 +49,7 @@ implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     /**
      * CookieからSession情報を取得するメソッド
-     * @author JUNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/08/16
      * @version 1.0
      */

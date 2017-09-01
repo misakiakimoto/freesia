@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
 *管理者が商品の削除フラグを編集するためのクラス
-* @author JUNYA TAKENO
+* @author MISAKI AKIMOTO
 * @since 2017/07/16
 * @version 1.0
 */
@@ -42,7 +42,7 @@ public class AdminItemSwitchAction extends ActionSupport implements SessionAware
 
     /**
      * 削除フラグを切り替える実行メソッド
-     * author JUNYA TAKENO
+     * author MISAKI AKIMOTO
      * @since 2017/07/16
      * @return 成功ならSUCCESS それ以外ならERROR
      */

@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 管理者画面で商品を検索するためのアクションクラス
- * @author JUNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/07/16
  * @version 1.0
  */
@@ -54,7 +54,7 @@ public class AdminItemSearchAction extends ActionSupport implements SessionAware
 
     /**
     * 特定条件で商品を検索し表示する実行メソッド
-    * @author JUNYA TAKENO
+    * @author MISAKI AKIMOTO
     * @since 2017/07/16
     * @version 1.0
     * @return 成功ならSUCCESS それ以外はERROR

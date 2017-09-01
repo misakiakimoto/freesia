@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  *管理者が商品編集画面に移動するためのクラス
- * @author JUNNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/07/16
  * @version 1.0
  */
@@ -36,7 +36,7 @@ public class AdminItemEditAction extends ActionSupport implements SessionAware {
 
     /**
      * *管理者が商品編集画面に移動するためのメソッド
-     * @author JUNNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/07/16
      * @version 1.0
      * @return 成功ならSUUCCESS それ以外はERROR

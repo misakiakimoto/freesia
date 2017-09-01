@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 購入履歴画面に必要な情報を取ってくるための Actionクラス
- * @author JUNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/08/16
  * @version 1.0
  */
@@ -53,7 +53,7 @@ public class IndexAction extends ActionSupport
 
     /**
      * CookieからSession情報を取得するメソッド
-     * @author JUNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/08/16
      */
     public String execute() {

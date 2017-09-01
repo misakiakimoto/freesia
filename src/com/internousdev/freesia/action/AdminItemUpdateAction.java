@@ -27,7 +27,7 @@ public class AdminItemUpdateAction extends ActionSupport
 
 /**
  * 管理者が商品情報を編集するためのクラス
- * @author JUNNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/07/16
  * @version 1.0
  */
@@ -93,7 +93,7 @@ implements SessionAware,ServletRequestAware,ServletResponseAware {
 
     /**
     * 商品情報を編集する実行メソッド
-    * @author JUNNYA TAKENO
+    * @author MISAKI AKIMOTO
     * @since 2017/07/16
     * @return 成功ならSUCCESS それ以外はERROR
 

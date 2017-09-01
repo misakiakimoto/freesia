@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 管理者用商品一覧画面に必要な情報を取得するためのクラス
  * @since 2017/07/16
- * @author JUNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @version 1.0
  */
 public class AdminItemDisplayAction extends ActionSupport implements SessionAware {
@@ -46,7 +46,7 @@ public class AdminItemDisplayAction extends ActionSupport implements SessionAwar
     /**
     * 商品一覧情報を取得する実行メソッド
     * @return 成功ならSUCCESS それ以外はERROR
-    * @author JUNYA TAKENO
+    * @author MISAKI AKIMOTO
     * @version 1.0
     */
     public String execute() throws Exception {
