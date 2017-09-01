@@ -11,7 +11,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 商品一覧画面遷移に関するメソッド
- * @author YUUKI KISHIGUCHI
+ * @author MISAKI AKIMOTO
  * @since 2017/07/13
  * @version 1.1
  */

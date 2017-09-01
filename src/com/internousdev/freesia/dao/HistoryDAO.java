@@ -14,7 +14,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 購入履歴画面のために購入履歴を引っ張ってくるDAOクラス
- * @author 	RYOTA SHISHIKURA
+ * @author 	MISAKI AKIMOTO
  * @since 	2017/07/10
  * @version 1.0
  */

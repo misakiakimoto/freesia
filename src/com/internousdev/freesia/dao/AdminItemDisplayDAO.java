@@ -11,7 +11,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * スイッチするクラス
- * @author JUNYA TAKENO
+ * @author MISAKI AKIMOTO
  * @since 2017/08/15
  * @version 1.0
  */
@@ -21,7 +21,7 @@ public class AdminItemDisplayDAO {
 
     /**
      * スイッチするメソッド
-     * @author JUNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/08/15
      * @version 1.0
      * @return itemList

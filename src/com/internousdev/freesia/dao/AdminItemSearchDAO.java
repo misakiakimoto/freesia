@@ -10,7 +10,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
 * ユーザーが購入した情報を閲覧するクラス
-*@author JUNYA TAKENO
+*@author MISAKI AKIMOTO
 *@since 2017/08/15
 *@version 1.0
 */
@@ -20,7 +20,7 @@ public class AdminItemSearchDAO {
 
     /**
      * スイッチするメソッド
-     * @author JUNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/08/15
      * @version 1.0
      * @param itemId 商品ID

@@ -2,7 +2,7 @@ package com.internousdev.freesia.dto;
 
 /**
  * 商品情報を格納するためのDTOクラス
- * @author TAKUMI MISAWA
+ * @author MISAKI AKIMOTO
  * @since 2017/7/4
  * @version 1.1
  */

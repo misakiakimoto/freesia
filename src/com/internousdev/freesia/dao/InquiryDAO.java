@@ -10,7 +10,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 問い合わせフォームで入力された情報を、データベースに送るクラス
- * @author SHUSAKU YONEYAMA
+ * @author MISAKI AKIMOTO
  * @since 2017/08/10
  * @version 1.0
  */

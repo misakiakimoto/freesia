@@ -8,7 +8,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 管理者画面で商品情報を更新するクラス
- *@author JUNYA TAKENO
+ *@author MISAKI AKIMOTO
  *@since 2017/08/15
  *@version 1.0
  */
@@ -17,7 +17,7 @@ public class AdminItemUpdateDAO {
 
     /**
      * 商品情報を更新するメソッド
-     * @author JUNYA TAKENO
+     * @author MISAKI AKIMOTO
      * @since 2017/08/15
      * @version 1.0
      * @param itemName 商品名

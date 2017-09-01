@@ -2,7 +2,7 @@ package com.internousdev.freesia.dto;
 
 /**
  * CreditDTO クレジット情報を格納する為のクラス
- * @author TAKUMI MISAWA
+ * @author MISAKI AKIMOTO
  * @version 1.0
  */
 
